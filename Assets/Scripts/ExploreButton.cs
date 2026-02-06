@@ -7,7 +7,6 @@ public class ExploreButton : MonoBehaviour
 {
     public void ExploreButtonClicked()
     {
-        Debug.Log("Going to surface");
         SceneManager.LoadScene("SurfaceExploring");
     }
 }

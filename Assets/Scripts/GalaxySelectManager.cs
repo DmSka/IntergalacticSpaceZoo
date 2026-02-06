@@ -17,4 +17,9 @@ public class GalaxySelectManager : MonoBehaviour
     {
         planetGenerator.GeneratePlanets();
     }
+    public void SelectPlanet()
+    {
+        GameManager.Instance.explorePlanet();
+        
+    }
 }

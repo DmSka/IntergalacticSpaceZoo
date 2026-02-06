@@ -34,7 +34,7 @@ public class PlanetData
         }
 
         temperature = Random.Range(0, 100);
-        AntiMatterHazardLevel = Random.Range(1, 7);
+        AntiMatterHazardLevel = Random.Range(1, 3);
         Si = Random.Range(0, 4);
         C = Random.Range(2, 9);
 

@@ -11,8 +11,17 @@ public class GameManager : MonoBehaviour
     public List<PlanetData> generatedPlanets = new List<PlanetData>(); // all planets in current scene
     public List<PlanetData> visitedPlanets = new List<PlanetData>();
 
+    public List<Creature> creatures = new();
+
     public PlanetData selectedPlanet;
     public PlanetData visitingPlanet;
+
+    public int cageAmount = 1;
+    public int netAmount;
+    public int dartAmount;
+
+    public bool netOwned;
+    public bool dartOwned;
 
     private void Awake()
     {
@@ -28,23 +37,36 @@ public class GameManager : MonoBehaviour
 
     public bool checkIfVisited(PlanetData planet)
     {
-        for (int i = 0; i < visitedPlanets.Count; i++)
-            if (visitedPlanets[i] == planet)
-                return true;
-        return false;
+        return visitedPlanets.Contains(planet);
     }
 
-    public void explorePlanet(PlanetData planet)
+    public void explorePlanet()
     {
-        visitingPlanet = planet;
+        visitingPlanet = selectedPlanet;
 
         // add to visited if not already
-        if (!visitedPlanets.Contains(planet))
-            visitedPlanets.Add(planet);
+        if (!visitedPlanets.Contains(visitingPlanet))
+            visitedPlanets.Add(visitingPlanet);
+    }
 
-        // increment visit count
-        planet.NumberOfTimesVisited++;
+    public int GetItemCount(string item)
+    {
+        switch (item.ToLower())
+        {
+            case "cage": return cageAmount;
+            case "net": return netAmount;
+            case "dart": return dartAmount;
+            default: return 0;
+        }
+    }
 
-        SceneManager.LoadScene("Exploring");
+    public bool OwnsItem(string item)
+    {
+        switch (item.ToLower())
+        {
+            case "net": return netOwned;
+            case "dart": return dartOwned;
+            default: return true; // cages are always owned
+        }
     }
 }

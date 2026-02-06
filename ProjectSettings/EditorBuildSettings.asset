@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 9d96ca869900fe2498da7bb8ae9677c2
   - enabled: 1
-    path: Assets/Ship.unity
+    path: Assets/Scenes/Ship.unity
     guid: 600e3943724a443429704f8c6eb72b83
   - enabled: 1
-    path: Assets/GalaxySelect.unity
+    path: Assets/Scenes/GalaxySelect.unity
     guid: 3a969c22c326480429d07adc3664ae66
   - enabled: 1
-    path: Assets/SurfaceExploring.unity
+    path: Assets/Scenes/SurfaceExploring.unity
     guid: 39ae033346d32a243a44dfa150a3ee7e
   m_configObjects: {}
