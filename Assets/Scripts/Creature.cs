@@ -16,4 +16,20 @@ public class Creature
     public PlanetData home;
     public Rarity rarity;
     public Sprite sprite;
+
+    // Convert Size enum to an int
+    public int GetIntFromSize()
+    {
+        switch (size)
+        {
+            case Size.small:
+                return 1;
+            case Size.medium:
+                return 2;
+            case Size.large:
+                return 3;
+            default:
+                return 1; // fallback
+        }
+    }
 }
